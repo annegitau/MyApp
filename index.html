@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+        
+        <script src="js/lib/jquery.js"></script>
+		<!-- your scripts here -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/bootstrap.js"></script>
+		<script src="js/lib/jquery.mobile.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" >
+            $(function(){
+    function camSucess(imgData){
+        $("#img_camPH").attr("src",imgData);
+        
+    }
+    function camError(error){
+        alert(error);
+        
+    }
+    
+    function accessCamera(){
+        var options = {
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: Camera.PictureSourceType.CAMERA
+        };
+        navigator.camera.getPicture(camSucess, camError, options);
+        
+    }
+   
+});
+        </script>
+        <meta charset="utf-8">
+        <title>AnneApp</title>
+    </head>
+    <body>
+        <div data-role = "page">
+            <div data-role = "header">
+                <h1> Anne App</h1>
+            </div>
+            <div class="ui-content">
+                <button id="btn_camera">Camera</button>
+                <img id="img_camPH"> <br>
+                <button id="btn_barcodescanner">Camera</button><br>
+               
+                <button id="btn_geolocator">Camera</button>
+               
+            </div>
+        </div>
+    </body>
+</html>
